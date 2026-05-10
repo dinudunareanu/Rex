@@ -3,6 +3,8 @@ from tkinter import messagebox
 import word_processor
 import platform
 
+from ui.dialogs import MultiLineInputDialog
+
 class DocApp(ctk.CTk):
     def __init__(self):
         super().__init__()
@@ -52,7 +54,7 @@ class DocApp(ctk.CTk):
             context = {}
 
             for v in vars:
-                dialog = ctk.CTkInputDialog(text=v)
+                dialog = MultiLineInputDialog(text=v)
                 value = dialog.get_input()
                 context[v] = value
             
