@@ -1,0 +1,15 @@
+# Ignore all Word documents
+*.docx
+
+# Ignore Python virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Ignore Python bytecode (compiled files)
+__pycache__/
+*.py[cod]
+
+# Ignore sensitive info (if you use environment variables)
+.env
