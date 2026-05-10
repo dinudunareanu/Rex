@@ -2,7 +2,7 @@ name: Build EXE and Release
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 permissions:
   contents: write
@@ -43,11 +43,8 @@ jobs:
           tag_name: v1.0.0-build-${{ github.run_number }}
           name: "Rex v1.0.0 (build ${{ github.run_number }})"
           body: |
-            Build automat din commit-ul ${{ github.sha }}.
-            
-            ## Instalare
-            1. Descărcați `Rex.exe` de mai jos
-            2. Rulați-l (nu necesită instalare)
+            Automated build triggered by commit ${{ github.sha }}.
+
           files: dist/Rex.exe
           fail_on_unmatched_files: false
           generate_release_notes: false
