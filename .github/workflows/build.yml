@@ -36,6 +36,10 @@ jobs:
           name: Rex-exe
           path: dist/Rex.exe
 
+      - name: Create ZIP archive
+        run: |
+          Compress-Archive -Path dist/Rex.exe -DestinationPath dist/Rex.zip
+
       - name: Create GitHub Release
         id: create_release
         uses: softprops/action-gh-release@v2
@@ -45,7 +49,7 @@ jobs:
           body: |
             Automated build triggered by commit ${{ github.sha }}.
 
-          files: dist/Rex.exe
+          files: dist/Rex.zip
           fail_on_unmatched_files: false
           generate_release_notes: false
         env:
